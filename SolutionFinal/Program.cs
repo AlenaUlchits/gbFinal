@@ -19,10 +19,22 @@ int FindSizeOfNewArray(string[] array){
     }
     return size;
 }
+void FillNewArrayFromOld(string[] source, string[] newArray){
+    int indexSource = 0;
+    int index = 0;
+    while(indexSource < source.Length){
+        if(source[indexSource].Length <= 3){
+            newArray[index++] = source[indexSource];
+        }
+        indexSource++;
+    }
+}
+
 int size = new Random().Next(1, 6);
 string[] array = new string[size];
 FillArray(array);
 PrintArray(array);
 int newSize = FindSizeOfNewArray(array);
-Console.WriteLine(newSize);
+string[] finalArray = new string[newSize];
+FillNewArrayFromOld(array, finalArray);
 
