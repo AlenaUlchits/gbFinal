@@ -30,11 +30,14 @@ void FillNewArrayFromOld(string[] source, string[] newArray){
     }
 }
 
-int size = new Random().Next(1, 6);
+int size = new Random().Next(3, 7);
 string[] array = new string[size];
 FillArray(array);
+Console.WriteLine("Original array: ");
 PrintArray(array);
 int newSize = FindSizeOfNewArray(array);
 string[] finalArray = new string[newSize];
 FillNewArrayFromOld(array, finalArray);
+Console.WriteLine("Created array: ");
+PrintArray(finalArray);
 
